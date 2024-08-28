@@ -13,6 +13,9 @@ local inteligencia=9
 local flash=2
 local teleport=2
 local clone=1
+
+
+
 local function skill(skil)
     local tem="▰"
     local ntem="▱"
@@ -46,7 +49,7 @@ local function barra(atributo)
 end
 
 
-
+local function cartao ()
 print("====================================================")
 print("|")
 print("|"..nomedoag)
@@ -73,3 +76,22 @@ print("|")
 print("|")
 print("|")
 print("====================================================")
+end
+
+local function usar()
+
+    usando=io.read()
+
+    if usando=="c" then
+        clone=clone-1
+    elseif usando=="f" then
+        flash=flash-1
+    elseif usando=="t" then
+        teleport=teleport-1
+    elseif usando ~="t" or "f" or "c" then
+        usar()
+    end
+cartao()
+end
+cartao()
+usar()
